@@ -44,4 +44,4 @@ const resultats = () => {
     );
 };
 
-export default Resultats;
+export default resultats;
