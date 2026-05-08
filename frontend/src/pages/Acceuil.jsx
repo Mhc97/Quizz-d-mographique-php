@@ -34,18 +34,16 @@ const Acceuil = () => {
             <label className="block text-gray-700 mb-2">Choisis ton mode</label>
             <div className="flex gap-4">
                 <button
-                onClick={() => setMode('normal')
+                onClick={() => setMode('normal')}
                 className={`flex-1 py-2 rounded-lg font-semibold transition ${mode === 'normal'?'bg-blue-600 text-white': 'bg-gray-200 text-gray-700'}`}
                 >
                  🎯 Normal
                 </button>
                 <button
-                <button
                 onClick={() => setMode('chrono')}
                 classeName={`flex-1 py-2 rounded-lg font-semibold transition ${
                 mode === 'chrono' ? 'bg-red-600 text-white' : 'bg-gray-200 text-gray-700'
-              }`}
-                >
+              }`}>
                     ⏱️ Contre la montre
                     </button>
 
