@@ -48,7 +48,7 @@ const Quiz = () => {
 
     const handleAnswer = async (selected) => {
         if (!currentQuestion) return;
-        const isCorrect = await checkAnswer(currentQuestion, selected);
+        const isCorrect = selected === currentQuestion.bonne_reponse;
         const newScore = isCorrect ? score + 1 : score; 
         if (isCorrect){
             setScore(newScore);
