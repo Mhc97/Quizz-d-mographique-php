@@ -2,7 +2,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import { SaveScore } from "../services/api";
 
-const resultats = () => {
+const Resultats = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const {score, total, pseudo, mode} = location.state || {score: 0, total: 10, pseudo: 'Anonyme', mode: 'normal'};
@@ -44,4 +44,4 @@ const resultats = () => {
     );
 };
 
-export default resultats;
+export default Resultats;
