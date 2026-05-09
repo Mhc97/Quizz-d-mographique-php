@@ -18,7 +18,7 @@ try{
     $database = new Database();
     $pdo = $database->getConnection();
 
-    $sql = "INSERT INTO scores (pseudo, score, mode) VALUES (:psuedo, :score, :mode)";
+    $sql = "INSERT INTO scores (pseudo, score, mode) VALUES (:pseudo, :score, :mode)";
     $stmt = $pdo->prepare($sql);
     $stmt->execute(['pseudo' => $pseudo, 'score' => $score, 'mode' => $mode]);
 
