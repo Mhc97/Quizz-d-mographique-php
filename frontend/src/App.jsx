@@ -1,3 +1,4 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import './App.css';
 import Accueil from './pages/Accueil';
 import Quiz from './pages/Quiz';
@@ -11,7 +12,7 @@ function App() {
       return(
         <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Acceuil/>}/>
+          <Route path="/" element={<Accueil/>}/>
           <Route path="/quiz" element={<Quiz/>}/>
           <Route path="/resultats" element={<Resultats/>}/>
         </Routes>
