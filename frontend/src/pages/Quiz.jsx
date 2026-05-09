@@ -18,6 +18,7 @@ const Quiz = () => {
 
     useEffect(() => {
         loadQuestion();
+        
     }, []);
 
     useEffect(() => {
@@ -39,8 +40,9 @@ const Quiz = () => {
     const handleAnswer = async (selected) => {
         if (!currentQuestion) return;
         const isCorrect = await checkAnswer(currentQuestion, selected);
+        const newScore = isCorrect ? score + 1 : score; 
         if (isCorrect){
-            setScore(s => s + 1);
+            setScore(newScore);
             setFeedback({text: '✅ Bonne réponse !', type: 'correct' });
         }else{
             setFeedback({text: `❌ Mauvaise réponse. La bonne était : ${currentQuestion.bonne_reponse}`, type: 'wrong'});
@@ -52,7 +54,7 @@ const Quiz = () => {
                 loadQuestion();
             }else{
                 setQuizFinished(true);
-                navigate('/resultats', { state: { score, total: totalQuestions, pseudo, mode } });
+                navigate('/resultats', { state: { score: newScore, total: totalQuestions, pseudo, mode } });
             }
         }, 1200);
     };
