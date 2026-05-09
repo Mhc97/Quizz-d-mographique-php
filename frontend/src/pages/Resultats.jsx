@@ -11,37 +11,55 @@ const Resultats = () => {
     useEffect(() =>{
         saveScore(pseudo, score, mode);
     }, [pseudo, score, mode]);
-    return(
-           <div className="min-h-screen bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center p-4">
-      <div className="bg-white rounded-2xl shadow-2xl p-8 max-w-md w-full text-center">
-        <h1 className="text-4xl font-bold text-gray-800 mb-2">Résultat</h1>
-        <p className="text-gray-500 mb-6">Quiz Démographique</p>
 
-        <div className="text-6xl font-bold text-blue-600 mb-4">{percent}%</div>
-        <p className="text-xl mb-2">
-          {score} / {total} bonnes réponses
-        </p>
-        <p className="text-gray-600 mb-8">
-          {percent >= 80 ? '🏆 Excellent !' : percent >= 50 ? '👍 Bien joué !' : '📚 En progrès, retente ta chance !'}
-        </p>
+    const getMessage = () => {
+      if (percent >= 80) return {text: 'Excelent !', icon:'🏆', color:'#f5a623'};
+      if (percent >= 50) return {text: 'Bien joué !', icon:'👍', color:'#4caf50'};
+      return {text: 'Continue !', icon: '📚', color: '#e94560'};
+    }
+    const msg = getMessage();
+    
+           return (
+        <div style={{ minHeight: '100vh', background: '#1a1a2e', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '2rem', fontFamily: 'Georgia, serif' }}>
 
-        <div className="flex gap-4">
-          <button
-            onClick={() => navigate('/')}
-            className="flex-1 bg-gray-500 hover:bg-gray-600 text-white font-bold py-2 rounded-lg transition"
-          >
-            Accueil
-          </button>
-          <button
-            onClick={() => window.location.reload()}
-            className="flex-1 bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 rounded-lg transition"
-          >
-            Rejouer
-          </button>
+            <div style={{ background: '#16213e', borderRadius: '16px', padding: '2.5rem', width: '100%', maxWidth: '400px', border: '1px solid #2a2a4a', textAlign: 'center' }}>
+                
+                <div style={{ fontSize: '3rem', marginBottom: '0.5rem' }}>🏆</div>
+                <h2 style={{ color: '#fff', fontSize: '1.5rem', fontWeight: 'bold', marginBottom: '0.25rem', textTransform: 'uppercase', letterSpacing: '0.1em' }}>
+                    Résultat
+                </h2>
+                <p style={{ color: '#a0a0b0', fontSize: '0.85rem', marginBottom: '2rem' }}>{pseudo}</p>
+
+                <div style={{ fontSize: '3.5rem', fontWeight: 'bold', color: msg.color, marginBottom: '0.5rem' }}>
+                    {score * 10}/100
+                </div>
+                <p style={{ color: '#a0a0b0', marginBottom: '1.5rem' }}>{score} bonnes réponses sur {total}</p>
+
+                <div style={{ background: '#0f3460', borderRadius: '999px', height: '8px', marginBottom: '1rem', overflow: 'hidden' }}>
+                    <div style={{ height: '100%', width: `${percent}%`, background: msg.color, borderRadius: '999px', transition: 'width 1s ease' }} />
+                </div>
+                <p style={{ color: '#a0a0b0', fontSize: '0.9rem', marginBottom: '0.5rem' }}>{percent}%</p>
+
+                <p style={{ color: msg.color, fontSize: '1.1rem', fontWeight: 'bold', marginBottom: '2rem' }}>
+                    {msg.icon} {msg.text}
+                </p>
+
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
+                    <button
+                        onClick={() => navigate('/')}
+                        style={{ padding: '0.9rem', borderRadius: '10px', border: '2px solid #2a2a4a', background: 'transparent', color: '#a0a0b0', cursor: 'pointer', fontFamily: 'Georgia, serif', fontSize: '0.95rem' }}
+                    >
+                        🏠 Accueil
+                    </button>
+                    <button
+                        onClick={() => navigate('/quiz', { state: { mode, pseudo } })}
+                        style={{ padding: '0.9rem', borderRadius: '10px', border: 'none', background: '#e94560', color: '#fff', cursor: 'pointer', fontFamily: 'Georgia, serif', fontSize: '0.95rem', fontWeight: 'bold' }}
+                    >
+                        🔄 Rejouer
+                    </button>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
     );
-};
-
+}
 export default Resultats;
