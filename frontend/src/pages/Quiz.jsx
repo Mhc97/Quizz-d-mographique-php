@@ -16,13 +16,19 @@ const Quiz = () => {
     const [timeLeft, setTimeLeft] = useState(30);
     const [quizFinished, setQuizFinished] = useState(false);
 
+// 2. LES FONCTIONS EN PREMIER
     const loadQuestion = async () => {
-      const data = await getQuestion();
-      setCurrentQuestion(data);
-      setFeedback(null);
-      if (mode === 'chrono') setTimeLeft(30);
-      navigate('/resultats',{state: {score, total: totalQuestions, pseudo, mode}});
+        const data = await getQuestion();
+        setCurrentQuestion(data);
+        setFeedback(null);
+        if (mode === 'chrono') setTimeLeft(30);
     };
+
+    const handleTimeOut = () => {
+        setQuizFinished(true);
+        navigate('/resultats', { state: { score, total: totalQuestions, pseudo, mode } });
+    };
+  // les useEffect
     useEffect(() => {
         loadQuestion();
         
