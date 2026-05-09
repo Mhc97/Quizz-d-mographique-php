@@ -16,6 +16,13 @@ const Quiz = () => {
     const [timeLeft, setTimeLeft] = useState(30);
     const [quizFinished, setQuizFinished] = useState(false);
 
+    const loadQuestion = async () => {
+      const data = await getQuestion();
+      setCurrentQuestion(data);
+      setFeedback(null);
+      if (mode === 'chrono') setTimeLeft(30);
+      navigate('/resultats',{state: {score, total: totalQuestions, pseudo, mode}});
+    };
     useEffect(() => {
         loadQuestion();
         
@@ -30,12 +37,6 @@ const Quiz = () => {
         }
     }, [timeLeft, mode, quizFinished]);
 
-    const loadQuestion = async () => {
-        const data = await getQuestion();
-        setCurrentQuestion(data);
-        setFeedback(null);
-        if (mode === 'chrono') setTimeLeft(30);
-    };
 
     const handleAnswer = async (selected) => {
         if (!currentQuestion) return;
