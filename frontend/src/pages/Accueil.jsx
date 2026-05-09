@@ -21,12 +21,12 @@ const Accueil = () => {
         <p className="text-center text-gray-500 mb-8"> Teste tes connaissances sur les pays du monde!</p>
 
         <div className="mb-4">
-            <label classeName="block text-gray-700 mb-2">Ton pseudo</label>
+            <label className="block text-gray-700 mb-2">Ton pseudo</label>
             <input 
             type="text" 
             value={pseudo}
             onChange={(e) => setPseudo(e.target.value)}
-            classeName="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
             placeholder="Entrez votre pseudo"
             />
         </div>
@@ -41,7 +41,7 @@ const Accueil = () => {
                 </button>
                 <button
                 onClick={() => setMode('chrono')}
-                classeName={`flex-1 py-2 rounded-lg font-semibold transition ${
+                className={`flex-1 py-2 rounded-lg font-semibold transition ${
                 mode === 'chrono' ? 'bg-red-600 text-white' : 'bg-gray-200 text-gray-700'
               }`}>
                     ⏱️ Contre la montre
