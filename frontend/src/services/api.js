@@ -12,7 +12,7 @@ export const checkAnswer = async (questionId, selectedOption) => {
     return res.data.correct;
 };
 
-export const saveScore = async (pseudo, ScrollRestoration, mode)=>{
+export const saveScore = async (pseudo, score, mode)=>{
     const res = await axios.post(`${API_BASE}/save_score.php`, {pseudo, score, mode});
     return res.data.success;
 };

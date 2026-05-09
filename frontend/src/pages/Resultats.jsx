@@ -1,6 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
-import { SaveScore } from "../services/api";
+import { saveScore } from "../services/api";
 
 const Resultats = () => {
     const location = useLocation();
@@ -9,7 +9,7 @@ const Resultats = () => {
     const percent = Math.round((score / total) * 100);
 
     useEffect(() =>{
-        SaveScore(pseudo, score, mode);
+        saveScore(pseudo, score, mode);
     }, [pseudo, score, mode]);
     return(
            <div className="min-h-screen bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center p-4">
