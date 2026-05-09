@@ -34,7 +34,7 @@ try{
     $data = [
         "id" => $paysId,
         "texte" => "Quelle est la capitale de $nomPays ?",
-        "oprions" => $options,
+        "options" => $options,
         "bonne_reponse" => $bonneReponse
     ];
 
