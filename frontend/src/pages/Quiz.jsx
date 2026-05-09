@@ -24,7 +24,7 @@ const Quiz = () => {
         if(mode === 'chrono' && !quizFinished && timeLeft > 0){
             const  timer = setTimeout(() => setTimeLeft(t => t-1), 1000);
             return () => clearTimeout(timer);
-        }else if (mde === 'chrono' && timeLeft === 0 && !quizFinished){
+        }else if (mode === 'chrono' && timeLeft === 0 && !quizFinished){
             handleTimeOut();
         }
     }, [timeLeft, mode, quizFinished]);
