@@ -7,8 +7,8 @@ export const getQuestion = async () => {
     return res.data;
 };
 
-export const chekAnswer = async (questionId, selectedOption) => {
-    const res = await axios.post(`${API_BASE}/check_answer.php, {questionId, selectedOption}`);
+export const checkAnswer = async (questionId, selectedOption) => {
+    const res = await axios.post(`${API_BASE}/check_answer.php, `,{questionId, selectedOption});
     return res.data.correct;
 };
 
