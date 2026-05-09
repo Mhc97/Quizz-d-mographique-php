@@ -1,5 +1,5 @@
 import './App.css';
-import Accueil from './pages/Acceuil';
+import Accueil from './pages/Accueil';
 import Quiz from './pages/Quiz';
 import Resultats from './pages/Resultats';
 
