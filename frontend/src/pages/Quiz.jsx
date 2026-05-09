@@ -27,7 +27,9 @@ const Quiz = () => {
     const handleTimeOut = () => {
         setQuizFinished(true);
         navigate('/resultats', { state: { score, total: totalQuestions, pseudo, mode } });
+        
     };
+    
   // les useEffect
     useEffect(() => {
         loadQuestion();
@@ -65,14 +67,7 @@ const Quiz = () => {
             }
         }, 1200);
     };
-
-    const handleTimeOut = () => {
-        setQuizFinished(true);
-        navigate('/resultats', { state: { score, total: totalQuestions, pseudo, mode } });
-    };
-
     if (!currentQuestion) return <div className="text-center text-white text-2xl">Chargement...</div>;
-
     return(
             <div className="min-h-screen bg-gradient-to-br from-blue-500 to-purple-600 flex flex-col items-center justify-center p-4">
       <div className="bg-white rounded-2xl shadow-2xl p-6 max-w-2xl w-full">
