@@ -13,7 +13,7 @@ if (!isset($input['pseudo']) || !isset($input['mode'])){
 
 $pseudo = htmlspecialchars($input['pseudo'], ENT_QUOTES, 'UTF-8');
 $score = intval($input['score']);
-$pseudo = htmlspecialchars($input['mode'], ENT_QUOTES, 'UTF-8');
+$mode = htmlspecialchars($input['mode'], ENT_QUOTES, 'UTF-8');
 try{
     $database = new Database();
     $pdo = $database->getConnection();

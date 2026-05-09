@@ -4,21 +4,18 @@ header("Content-Type: application/json");
 ini_set('diplay_errors', 1);
 error_reporting(E_ALL);
 
-require_once '../config/database.php';
+require_once __DIR__ .'../config/database.php';
 
-// Appel à l'API Shadify pour une question sur les capitales
-// $apiUrl = "https://shadify.yurace.pro/api/countries/capital-quiz?variants=4&amount=1";
-// $reponse = file_get_contents($apiUrl);
-
-// echo $reponse;
 try{
-    $database = new database();
+    $database = new Database();
     $pdo = $database->getConnection();
 
     // pour choisr un pays au hasard 
     $stmt = $pdo->query("SELECT id, name, capital FROM pays ORDER BY RAND() LIMIT 1");
-    $pays = $stmt->fetch(PDO::FETCH_ASSOC).
-    $pays = throw new Exception("Aucun pays trouvé");
+    $pays = $stmt->fetch(PDO::FETCH_ASSOC);
+    if (!$pays){
+        throw new Exception("Aucun pays trouvé");
+    }
 
     $bonneReponse = $pays['capital'];
     $paysId = $pays['id'];
@@ -42,6 +39,7 @@ try{
     ];
 
     echo json_encode($data);
+
 }catch (Exception $e){
     echo json_encode(["error" => $e->getMessage()]);
 }
