@@ -4,7 +4,7 @@ header("Content-Type: application/json");
 
 require_once '../config/database.php';
 
-$input = json_decode(file_get_contents("php//input"), true);
+$input = json_decode(file_get_contents("php://input"), true);
 
 if (!isset($input['pseudo']) || !isset($input['mode'])){
     echo json_encode(["correct" => false, "error" => "Données manquantes"]);
