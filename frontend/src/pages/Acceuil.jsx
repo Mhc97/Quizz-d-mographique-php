@@ -1,7 +1,7 @@
 import {useState} from 'react';
 import {useNavigate} from 'react-router-dom';
 
-const Acceuil = () => {
+const Accueil = () => {
     const navigate = useNavigate();
     const [mode, setMode] = useState('normal');
     const [pseudo, setPseudo] = useState('');
@@ -51,7 +51,7 @@ const Acceuil = () => {
             </div>
         </div>
         <button
-        onClick={startQuizz}
+        onClick={startQuiz}
         className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-lg transition"
         >
             Commencer le quiz

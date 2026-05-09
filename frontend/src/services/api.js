@@ -3,7 +3,7 @@ import axios from 'axios'
 const API_BASE = 'http://localhost/Quiz_démographique/backend/api';
 
 export const getQuestion = async () => {
-    const res = await axios.get(`${API_BASE}/get_question.php`):
+    const res = await axios.get(`${API_BASE}/get_question.php`);
     return res.data;
 };
 
