@@ -12,7 +12,7 @@ const Accueil = () => {
     };
 
     return (
-        <div style={{ minHeight: '100vh', background: '#1a1a2e', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', padding: '2rem', fontFamily: 'Georgia, serif' }}>
+        <div className="min-h-screen bg-gray-900 flex flex-col items-center justify-center py-16 px-4">
             
             <h1 style={{ color: '#fff', fontSize: '2.5rem', fontWeight: 'bold', marginBottom: '0.5rem', letterSpacing: '0.02em' }}>
                 Quizz Démographique
