@@ -194,4 +194,12 @@ body {
     right: 0;
     border-right-color: var(--border);
   }
+
+  /* pour le responsive */
+
+  .nav-hamburger {display: none;}
+  @media (max-width: 640ox){
+    .nav-desktop {display: none !important;}
+    .nav-hamburger {display: block !important; }
+  }
 }
