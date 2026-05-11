@@ -1,3 +1,28 @@
+
+# Quiz Démographique
+**Pour** : Mouhcine Srifi
+**Pour** : Julien, Vitor, Yanis  
+**Date de rendu** : 11 mai 2026
+
+## Description
+
+Application de quiz interactif sur la géographie mondiale (capitales, population, drapeaux…).  
+Développée avec **React + TailwindCSS** (front-end) et **PHP + MySQL** (back-end).
+
+## Technologies utilisées
+
+- Front : React, TailwindCSS, Vite
+- Back : PHP, PDO, MySQL
+- Outils : Git, GitHub, Figma
+
+## Installation et lancement
+
+### 1. Cloner le dépôt
+```bash
+git clone https://github.com/Mhc97/Quiz-d-mographique-php.git
+cd Quiz-d-mographique-php
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
