@@ -29,7 +29,8 @@ const Navbar = () => {
                     <span className={`block h-0.5 w-6 bg-white transition-all duration-300 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
                 </button>
 
-                {/* Titre */}
+                {/* TITRE — cliquable pour revenir à l'accueil
+                    whitespace-nowrap empêche le titre de se couper sur 2 lignes sur mobile */}
                 <span
                     onClick={() => goTo('/')}
                     className="text-white font-bold text-sm md:text-base cursor-pointer select-none whitespace-nowrap"

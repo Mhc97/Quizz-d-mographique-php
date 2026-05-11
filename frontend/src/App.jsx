@@ -11,9 +11,11 @@ function App() {
 
   return (
     <>
-   
+   {/* BrowserRouter active le système de navigation React Router
+          Il doit englober TOUT ce qui utilise useNavigate ou useLocation */}
         <BrowserRouter>
          <Navbar/>
+         {/* Routes — affiche le bon composant selon l'URL*/}
         <Routes>
           <Route path="/" element={<Accueil/>}/>
           <Route path="/quiz" element={<Quiz/>}/>

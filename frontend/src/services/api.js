@@ -1,7 +1,9 @@
 import axios from 'axios';
 
+// URL de base de l'API PHP — pointe vers le dossier /api/ du backend
 const API_BASE = 'http://localhost/Quizz%20d%C3%A9mographique/back-end/quiz-api/api';
 
+// Récupère des questions aléatoire depuis le backend
 export const getQuestion = async () => {
     const res = await axios.get(`${API_BASE}/get_question.php`);
     return res.data;
